@@ -1,0 +1,239 @@
+/* General Styling Applied Pagewide */
+:root { 
+    --pod-width: 0%;
+    /* Variable used in determining pod icon position  */
+}
+
+ *{
+    margin: -5;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-height: 800px; 
+}
+
+
+/* General Body */
+body{
+    background: #879fb3;
+    ;
+}
+
+/* Nav */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #008cff;
+    padding: 2px 5%;
+    position: sticky;
+    min-height: 200px; 
+}
+
+.nav-left, .nav-right{
+    display: flex;
+    align-items: center
+}
+
+.logo{
+    width: 750px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.event{
+    font-size: 25px;
+    display: flex;
+    color: #ffffff;
+}
+
+.event p{
+    font-size: 20px;
+    display: inline;
+}
+
+.event a{
+    color: grey;
+    font-size: 18px;
+    display: flex; 
+    margin-top: 20px; 
+}
+
+.date{
+    border-radius: 30px;
+    height: 125px;
+    width: 125px;
+    margin-right: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px black; 
+}
+
+.date span{
+    background: rgba(238,188,49,255);
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 20px;
+    padding: 5px 0;
+}
+
+.info {
+    font-size: 20px;
+    margin-top: -12px; 
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    padding-top: 10px;
+}
+
+/* left side bar menu*/
+.left-sidebar{
+    top: 60px;
+    align-self: sticky;
+    position: sticky;
+    flex-basis: 100px;
+    margin-right: 50px;
+}
+
+.right {
+    flex-basis: 200px;
+    margin-left: 50px;
+  }
+
+.shortcuts p{
+    color: #ffffff;
+    width: fit-content;
+    text-decoration: none;
+    display: sticky;
+    align-items: center;
+    margin-bottom: 40px;
+    font-size: 20px;
+    cursor: pointer; 
+}
+
+.shortcuts p img{
+    width: 50px;
+    margin-right: 30px;
+
+}
+
+.shortcuts h4{
+    color: white;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+
+.shortcuts h4 img{
+    width: 25px;
+    margin-right: 15px;
+
+}
+
+.shortcuts h4{
+    border-bottom: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+/* main menu*/
+.menu-middle {
+    margin-top: 10px;
+    margin-right: 20px;
+    flex-basis: 47%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 25px 80px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.button{
+    border-radius: 15px;
+    height: 75px;
+    width: 600px;
+    margin-right: 30px;
+    margin-left: 80px;
+    margin-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+    padding-bottom: 5px;
+    background: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: solid #008cff 2px;
+}
+
+.button a{
+ text-decoration: none;
+}
+
+.button span{
+    color: #008cff;
+    position: relative;
+    width: 100%;
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    top: -10px; 
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+    
+.button:hover::before {
+    width: 400px;
+    height: 400px;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(2);
+}
+
+.menu-right-sidebar {
+    /* border-radius: 10px;  */
+    margin-top: 50px;
+    margin-left: -40px; 
+    width: 677px; 
+    height: 90%; 
+    /* border: 2px solid #008cff;  */
+
+}
+
+.qpod {
+    width: 1000px; 
+    height: 600px; 
+    margin-left: -20px;  
+}
+
+/* main dashboard*/
+
+#dashboardMiddle {
+    display: none; 
+    position: absolute; 
+    left: 325px; 
+    top: 250px; 
+    width: 1475px; 
+    height: 780px; 
+    color: white; 
+}

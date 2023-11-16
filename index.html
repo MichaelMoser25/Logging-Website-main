@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperloop Interface</title>
+    <link rel="stylesheet" href="style.css"> 
+    <script src="https://kit.fontawesome.com/2910d20e55.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="favicon1.png" type ="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <img id="homeLogo" src="logo1.png" class="logo">
+        </div>  
+	<!-----Create left event in the nav bar----->
+        <div class="event">
+            <!-- <div class="date">
+                <h2 id="dayLeft">4</h2>
+                <span id="monthLeft">April</span>
+            </div>
+            <div class="info">
+                <h4 id="eventLeft">Finish GUI</h4>
+                <p><i class="fa-solid fa-location-dot"></i> </p><p id="locationLeft">Stirling Hall</p>
+                <u><a href="https://queenshyperloop.ca/" target="_blank">More Info</a></u>
+            </div> -->
+        </div>
+	<!-----Create right event in the nav bar----->
+        <div class="event">
+            <!-- <div class="date">
+                <h2 id="dayRight">25</h2>
+                <span id="monthRight">April</span>
+            </div>
+            <div class="info">
+                <h4 id="eventRight">Final Presentation</h4>
+                <p><i class="fa-solid fa-location-dot"></i> </p><p id="locationRight">Mitchell Hall</p>
+                <u><a href="https://github.com/MOMOtrial/Hyperloop-GUI" target="_blank">More Info</a></u>
+            </div> -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-----Left Sidebar (visible on all pages)----->
+        <div class="left-siderbar">
+            <div class="shortcuts">
+                <h4>Quick Access</h4>
+                <p id="returnHome"><i class="fa-solid fa-clock-rotate-left"></i> Return Home </p>
+                <p id="tripProgress"><i class="fa-solid fa-compass"></i> Location </p> 
+                <p id="podStatus"><i class="fa-solid fa-battery-half"></i> Battery </p> 
+                <p id="errors"><i class="fa-solid fa-triangle-exclamation"></i> Notifications </p>
+                <p id="userInputs"><i class="fa-solid fa-sliders"></i> User Inputs </p>
+            </div>
+        </div>
+        
+        <!-----Menu Center Content (contains main buttons)----->
+        <div class ="menu-middle" id="menu-middle">
+            <div>
+                <div id="dashboard" class="button">
+                    <span>DASHBOARD</span>
+                </div>
+                <div id="podSystem" class="button">
+                    <span>Activity</span>
+                </div>
+                <div id="alerts" class="button">
+                    <span>Configuration</span>
+                </div>
+                <div id="inputs" class="button">
+                    <span>Settings</span>
+                </div>
+            </div>
+        </div>
+
+        <!-----Menu Right Siderbar (hyperloop pod image)----->
+        <div class="menu-right-sidebar" id="menuSidebar">
+                <img src="C:\Users\micha\ansel\images\626ad01a9cdb24914f68c6fa_average-response-size-2.png" class="qpod">
+        </div>
+
+        <!-----Dashboard Center Content----->
+        <div class ="dashboard-middle" id="dashboardMiddle">
+            <!-- Acceleration and RPM graphs -->
+            <canvas id="accelerationGraph"></canvas>
+            <canvas id="rpmGraph"></canvas> 
+            <!-- Navigation Buttons (some appear stacked on top of eachother depending on situation) -->
+            <div class="navigationButtons" id="stop"><p>Stop</p></div>
+            <div class="navigationButtons" id="start"><p>Launch</p></div>
+            <div class="navigationButtons" id="check"><p>Check</p></div>
+            <div class="navigationButtons" id="reset"><p>Reset</p></a></div>
+            <div class="navigationButtons" id="underway"></div>
+            <!-- Pod Status indicator below the navigation bar  -->
+            <div class="pod-status" id="pod-status">
+                <div class="pod-mode" id="off">
+                    <h3>1</h3>
+                    <p>Off</p>
+                    <div class="initiation-line" id="off-line"></div>
+                </div>
+                <div class="pod-mode" id="armed">
+                    <h3>2</h3>
+                    <p>Armed</p>
+                    <div class="initiation-line" id="armed-line"></div>
+                </div>
+                <div class="pod-mode" id="accelerating">
+                    <h3>3</h3>
+                    <p>Accelerating</p>
+                    <p id="accelerationTime"></p>
+                    <div class="initiation-line" id="accelerating-line"></div>
+                </div>
+                <div class="pod-mode" id="coasting">
+                    <h3>4</h3>
+                    <p>Coasting</p>
+                    <div class="initiation-line" id="coasting-line"></div>
+                </div>
+                <div class="pod-mode" id="braking">
+                    <h3>5</h3>
+                    <p>Braking</p>
+                    <div class="initiation-line" id="braking-line"></div>
+                </div>
+                <div class="pod-mode" id="stopped">
+                    <h3>6</h3>
+                    <p>Stopped</p>
+                </div>
+            </div>
+            <!-- Pod trip visualization bar  -->
+            <!-- <div class="trip-bar">
+                <div class="trip-progress"> 
+                    <div class="pod-distance" id="pod-distance"><img src="podIcon.png"></div>
+                </div>
+                <p id="startPosition">0</p>
+                <p id="tripDistance">10000</p>
+            </div> -->
+            <!-- Speedometer and associated text/components -->
+            <!-- <div class="speedometer-container">
+                <div class="speedometer">
+                  <div class="dial"></div>
+                  <div class="needle"></div>
+                  <div class="speedometer-text">
+                    <span class="value">0</span>
+                    <span class="unit">km/h</span>
+                  </div>
+                </div>
+              </div>
+              <div class="divider" id="dashboardDivider"></div> -->
+              <!-- Battery indicator -->
+            <!-- <div id="battery-container">
+                <p class="data-header">Main Battery Life</p>
+                <canvas id="battery-chart"></canvas>
+                <h1 id="batteryLevel">100%</h1>
+            </div> -->
+            <!-- Sensor data for the navigations on dashboard -->
+            <div class="sensor-data" id="navigationData">
+                <p class="data-header">Navigation</p>
+                <div class="data-holder">
+                    <div class="data-text">
+                        <p class="data-name">RPM (r/min):</p>
+                        <p class="data-value" id="rpm">0</p>
+                    </div>
+                    <div class="data-text">
+                        <p class="data-name">Acceleration (m/s<sup>2</sup>):</p>
+                        <p class="data-value" id="acceleration">0</p>
+                    </div>
+                    <div class="data-text">
+                        <p class="data-name">Trip Distance (m):</p>
+                        <p class="data-value" id="travelledDistance">0</p>
+                    </div>
+                    <div class="data-text">
+                        <p class="data-name">Speed (km/h):</p>
+                        <p class="data-value" id="speed">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
